@@ -1,0 +1,159 @@
+<div class="w-full relative">
+
+    <div class="flex flex-wrap py-8 md:py-10 xl:py-12">
+      <div class="container">
+
+        <!-- page heading -->
+        <div class="h-menu-flow">
+          <span>Home</span><span>></span><span> My Account</span><span>></span><span class="active"> Account Information</span>
+        </div>
+          
+          <!-- account information -->
+        <div class="w-full py-8 md:py-10 xl:py-12">
+          <h2 class="capitalize font-bold mb-6">account information</h2>
+          <div class="flex flex-wrap items-start justify-between -mt-5 -mx-3">
+            <div class="w-full lg:w-8/12 px-3 pt-5">
+              <div class="flex items-center">
+                <div class="flex items-center font-bold text-primary cursor-pointer">  
+                  <span class="pr-3"><svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M6.52796 2.53269C6.82216 2.24111 6.82428 1.76624 6.53269 1.47204C6.24111 1.17784 5.76624 1.17573 5.47204 1.46731L3.67731 3.2461C3.00134 3.91604 2.44886 4.46359 2.05706 4.95146C1.64963 5.45878 1.35469 5.97372 1.27591 6.59184C1.24136 6.86286 1.24136 7.13714 1.27591 7.40816C1.35469 8.02628 1.64963 8.54122 2.05706 9.04854C2.44886 9.53642 3.00134 10.084 3.67732 10.7539L5.47204 12.5327C5.76624 12.8243 6.24111 12.8222 6.53269 12.528C6.82427 12.2338 6.82216 11.7589 6.52796 11.4673L4.76499 9.72C4.0495 9.01086 3.55869 8.52282 3.22659 8.10929C3.11867 7.97491 3.03446 7.8566 2.96908 7.75H18C18.4142 7.75 18.75 7.41421 18.75 7C18.75 6.58579 18.4142 6.25 18 6.25H2.96908C3.03446 6.1434 3.11867 6.02509 3.22659 5.89071C3.55869 5.47718 4.0495 4.98914 4.76499 4.28L6.52796 2.53269Z" fill="#0F172A" stroke="black" stroke-linecap="round"/> </svg></span>
+                </div>
+                <span class="text-22 md:text-2xl xl:text-28 font-bold text-black_mirage">Personal & contact Details</span>
+              </div>
+              <div class="w-full p-3 -mx-3">
+                <form [formGroup]="personalAndContactDetailsForm" class="w-full">
+                  <div class="flex flex-wrap -mx-2">
+                    <div class="w-full sm:w-1/2 p-2">
+                      <label for="name" class="cardinput">
+                        <input type="text" [formControlName]="'name'" placeholder="Name" value="Jhonson Deo" id="name"/>
+                      </label>
+                      <span class="text-red-600" *ngIf="personalAndContactDetailsForm.get('name')?.  invalid && (personalAndContactDetailsForm.get('name')?.dirty && personalAndContactDetailsForm.get('name')?.touched)">
+                        <span *ngIf="personalAndContactDetailsForm.get('name')?.errors?.['required']">
+                          Name  is required.
+                        </span>
+                      </span>
+                    </div>
+                    <div class="w-full sm:w-1/2 p-2">
+                      <label for="telephone" class="cardinput">
+                        <input type="tel" [formControlName]="'telephone'" placeholder="Telephone" value="+91 9876543298" id="telephone"/>
+                      </label>
+                      <span class="text-red-600" *ngIf="personalAndContactDetailsForm.get('telephone')?.invalid && (personalAndContactDetailsForm.get('telephone')?.dirty && personalAndContactDetailsForm.get('telephone')?.touched)">
+                        <span *ngIf="personalAndContactDetailsForm.get('telephone')?.errors?.['required']">
+                          Telephone number is required.
+                        </span>
+                        <span *ngIf="personalAndContactDetailsForm.get('telephone')?.errors?.['pattern']">
+                          Please enter valid telephone number.
+                        </span>
+                      </span>
+                    </div>
+                    <div class="w-full sm:w-1/2 p-2">
+                      <label for="orderDate" class="cardinput">
+                        <input type="date" [formControlName]="'orderDate'" placeholder="03/16/2023" value="03/16/2023" id="orderDate"/>
+                      </label>
+                      <span class="text-red-600" *ngIf="personalAndContactDetailsForm.get('orderDate')?.  invalid && (personalAndContactDetailsForm.get('orderDate')?.dirty && personalAndContactDetailsForm.get('orderDate')?.touched)">
+                        <span *ngIf="personalAndContactDetailsForm.get('orderDate')?.errors?.['required']">
+                          Date  is required.
+                        </span>
+                      </span>
+                    </div>
+                    <div class="w-full sm:w-1/2 p-2">
+                      <label for="userEmail" class="cardinput">
+                        <input type="email" [formControlName]="'userEmail'" placeholder="abc@def.com" value="Johnsondoe@gmail.com" id="userEmail"/>
+                      </label>
+                      <span class="text-red-600" *ngIf="personalAndContactDetailsForm.get('userEmail')?.invalid && (personalAndContactDetailsForm.get('userEmail')?.dirty && personalAndContactDetailsForm.get('userEmail')?.touched)">
+                        <span *ngIf="personalAndContactDetailsForm.get('userEmail')?.errors?.['required']">
+                          Email is required.
+                        </span>
+                        <span *ngIf="personalAndContactDetailsForm.get('userEmail')?.errors?.['pattern']">
+                          Please use a valid email address.
+                        </span>
+                      </span>
+                    </div>
+                    <div class="w-full flex flex-wrap mt-8">
+                      <a routerLink="../account-information" lang="button" class="card-btn-primary ordernxtprw_btn mr-auto ml-2 order-1 sm:order-2">Save</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="bg-primary py-10 xl:py-12">
+      <div class="container">
+        <div class="text-center w-full mb-6 md:mb-10 xl:mb-12">
+          <img src="../assets/images/svg/Sellify.svg" class="brightness-0 invert mx-auto" alt="logilogo"/>
+        </div>
+        <div class="flex md:justify-between flex-wrap -px-3">
+          <div class="w-full sm:w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">Contact Us</span>
+              <div class="w-full space-y-2">
+                <span class="block text-sm lg:text-base text-light_gray">Mobile No : +91 9876543214</span>
+                <span class="block text-sm lg:text-base text-light_gray">Email : Support@gmail.com</span>
+                <div class="flex space-x-4 pt-2">
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Facebook.svg" alt="Facebook"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Twitter.svg" alt="Twitter"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Instagram.svg" alt="Instagram"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Github.svg" alt="Github"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/LinkedIn.svg" alt="LinkedIn"/>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">Customer Services</span>
+              <div class="w-full space-y-2">
+                <a href="dashboard/contact-us" class="block text-sm lg:text-base text-light_gray">Contact Us</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Track Your Order</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Product Care & Repair</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Book an Appointment</a>
+                <a href="dashboard/faq" class="block text-sm lg:text-base text-light_gray">Frequently Asked Questions</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Shipping & Returns</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">About Us</span>
+              <div class="w-full space-y-2">
+                <a href="dashboard/about-us" class="block text-sm lg:text-base text-light_gray">About Us</a>
+                <a href="dashboard/faq" class="block text-sm lg:text-base text-light_gray">FAQ</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Our Producers</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Sitemap</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Terms & Conditions</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">Catalog</span>
+              <div class="w-full space-y-2">
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Earrings</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Necklaces</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Bracelets</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Rings</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Jewellery Box</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Studs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<script src="../assets/js/script.js"></script>

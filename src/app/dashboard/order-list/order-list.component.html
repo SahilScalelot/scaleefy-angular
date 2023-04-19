@@ -1,0 +1,305 @@
+<div class="w-full relative">
+    
+    <!-- Order List -->
+    <div class="flex flex-wrap py-8 md:py-10 xl:py-12">
+      <div class="container">
+        <!-- menu list flow/ -->
+        <div class="h-menu-flow">
+          <span>Home</span><span>></span><span> My Account</span><span>></span><span class="active"> Order List</span>
+        </div>
+        <!-- order-titel  -->
+        <h2 class="capitalize font-bold mt-4 sm:mt-6">your order list</h2>
+        <!-- filtter dropdown & tab menu  -->
+        <div class="w-full flex items-center flex-wrap sm:flex-nowrap relative border-b-2 border-geyser mt-6">
+          <!-- fillter dropdown  -->
+          <div class="relative w-full sm:max-w-[200px] ml-auto sm:order-2">
+            <select name="filter" id="filter" class="text-gray_slate outline-none border-2 border-geyser w-full rounded-lg appearance-none text-sm font-semibold p-2 sm:p-3">
+              <option value="">Last 1 Month</option>
+              <option value="">Last 3 Month</option>
+              <option value="">Last 6 Month</option>
+              <option value="">Last 12 Month</option>
+            </select>
+            <label for="filter" class="absolute top-1/2 -translate-y-1/2 right-3 text-2xl text-gray_slate pointer-events-none icon-downArrow2"></label>
+          </div>
+          <!-- tab menu list  -->
+          <ul class="flex flex-wrap justify-center sm:justify-start items-center space-x-3 sm:space-x-5 tabnav sm:order-1">
+            <li class="py-3 sm:py-5 relative">
+              <a href="javascript:void(0)" class="inline-block active">Orders</a>
+              <span class="absolute w-0 h-1 rounded bg-secondary -bottom-0.5 left-0 anim"></span>
+            </li>
+            <li class="py-3 sm:py-5 relative">
+              <a href="javascript:void(0)" class="inline-block">Cancelled Orders</a>
+              <span class="absolute w-0 h-1 rounded bg-secondary -bottom-0.5 left-0 anim"></span>
+            </li>
+            <li class="py-3 sm:py-5 relative">
+              <a href="javascript:void(0)" class="inline-block">Cancelled Orders</a>
+              <span class="absolute w-0 h-1 rounded bg-secondary -bottom-0.5 left-0 anim"></span>
+            </li>
+          </ul>
+        </div>
+        <!-- order-lists -->
+        <div class="space-y-6 mt-8">
+          <div class="border rounded-xl p-4">
+            <div class="flex flex-wrap items-start justify-between sm:-mt-4 -mx-2">
+              <div class="font-primary sm:pt-3 lg:pt-4 px-2"><span>Order Place on</span><span>&nbsp;</span><span class="text-primary">03 March 2023</span></div>
+              <div class="font-primary sm:pt-3 lg:pt-4 px-2"><span>Total -</span><span>&nbsp;</span><span class="text-primary">$ 24 814.00</span></div>
+              <div class="relative group flex items-center justify-between font-primary cursor-pointer sm:pt-3 lg:pt-4 px-2">
+                <span>Ship to -<span>&nbsp;</span><span class="text-primary">Jhon Deo</span></span>
+                <span class="icon-downArrow text-base pl-4"></span>
+                <div class="droplist_two max-w-full min-w-[250px] sm:w-auto left-0 sm:right-0 sm:left-auto lg:left-1/2 lg:-translate-x-1/2">
+                  <div class="flex flex-col items-start font-bold text-sm space-y-2">
+                    <span>Jhon Deo</span>
+                    <span>No-01, First Floor, Beside Empire-State Gate-1</span>
+                    <span>Taxas,U.S.A 987654</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap lg:block items-center justify-between w-full lg:w-auto font-primary pt-1 sm:pt-3 lg:pt-4 px-2">
+                <p>Order # 001-7912515-8810700</p>
+                <div class="flex items-center justify-between lg:pt-1">
+                  <a href="javascript.void(0)" class="capitalize text-primary underline decoration-primary">view order details</a>
+                  <a href="javascript.void(0)" class="capitalize text-primary underline decoration-primary px-1.5">invoice</a>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap md:flex-nowrap items-end justify-between">
+              <div class="pt-2">
+                <p class="text-lg font-bold text-[#11A75C]">Order Delievered !</p>
+                <div class="flex flex-wrap sm:flex-nowrap items-center lg:items-end justify-start pt-2 sm:pt-4">
+                  <div class="order_img bg-gray_gull/10"><img src="../assets/images/image5.png" alt="Order Img" class="w-full"></div>  
+                  <div class="flex flex-col items-start justify-center sm:pl-4 md:pl-6 lg:pl-8 pt-1 sm:pt-0  space-y-1">
+                    <p class="font-bold text-sm md:text-base">Floral rose gold finger ring</p>
+                    <p class="w-11/12 text-xs text-gray_gull font-medium break-all">Add the gentle charm of flowers to your look with this finger ring crafted in 18 Karat Rose Gold with diamonds. Stone Clarity SI2</p>
+                    <div class="font-bold">
+                      <span class="text-xs md:text-sm text-black_mirage">Offer Price</span>
+                      <span class="text-sm md:text-base">₹ 24 814.00</span>
+                      <span class="font-normal text-xs md:text-sm text-gray_slate">Price ₹ 26 398.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:flex-wrap items-center justify-start w-full md:w-auto text-xs sm:text-sm font-medium pt-3">
+                <button lang="button" class="w-full sm:w-auto md:w-full font-bold border rounded-lg bg-primary text-white py-3 px-5 mx-0" onClick="toggleClass('cart_menu', 'show')">Return Order</button>
+                <button lang="button" class="w-full sm:w-auto md:w-full font-bold border rounded-lg border-primary text-black_mirage py-3 px-5 md:mt-3 ml-2 md:ml-0">Cancel Order</button>
+              </div>
+            </div>
+          </div>
+          <div class="border rounded-xl p-4">
+            <div class="flex flex-wrap items-start justify-between sm:-mt-4 -mx-2">
+              <div class="font-primary sm:pt-3 lg:pt-4 px-2"><span>Order Place on</span><span>&nbsp;</span><span class="text-primary">03 March 2023</span></div>
+              <div class="font-primary sm:pt-3 lg:pt-4 px-2"><span>Total -</span><span>&nbsp;</span><span class="text-primary">$ 24 814.00</span></div>
+              <div class="relative group flex items-center justify-between font-primary cursor-pointer sm:pt-3 lg:pt-4 px-2">
+                <span>Ship to -<span>&nbsp;</span><span class="text-primary">Jhon Deo</span></span>
+                <span class="icon-downArrow text-base pl-4"></span>
+                <div class="droplist_two max-w-full min-w-[250px] sm:w-auto left-0 sm:right-0 sm:left-auto lg:left-1/2 lg:-translate-x-1/2">
+                  <div class="flex flex-col items-start font-bold text-sm space-y-2">
+                    <span>Jhon Deo</span>
+                    <span>No-01, First Floor, Beside Empire-State Gate-1</span>
+                    <span>Taxas,U.S.A 987654</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap lg:block items-center justify-between w-full lg:w-auto font-primary pt-1 sm:pt-3 lg:pt-4 px-2">
+                <p>Order # 001-7912515-8810700</p>
+                <div class="flex items-center justify-between lg:pt-1">
+                  <a href="javascript.void(0)" class="capitalize text-primary underline decoration-primary">view order details</a>
+                  <a href="javascript.void(0)" class="capitalize text-primary underline decoration-primary px-1.5">invoice</a>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap md:flex-nowrap items-end justify-between">
+              <div class="pt-2">
+                <p class="text-lg font-bold text-primary">Arriving 06 Mar 2023</p>
+                <div class="flex flex-wrap sm:flex-nowrap items-center lg:items-end justify-start pt-2 sm:pt-4">
+                  <div class="order_img bg-gray_gull/10"><img src="../assets/images/image5.png" alt="Order Img" class="w-full"></div>  
+                  <div class="flex flex-col items-start justify-center sm:pl-4 md:pl-6 lg:pl-8 pt-1 sm:pt-0  space-y-1">
+                    <p class="font-bold text-sm md:text-base">Floral rose gold finger ring</p>
+                    <p class="w-11/12 text-xs text-gray_gull font-medium break-all">Add the gentle charm of flowers to your look with this finger ring crafted in 18 Karat Rose Gold with diamonds. Stone Clarity SI2</p>
+                    <div class="font-bold">
+                      <span class="text-xs md:text-sm text-black_mirage">Offer Price</span>
+                      <span class="text-sm md:text-base">₹ 24 814.00</span>
+                      <span class="font-normal text-xs md:text-sm text-gray_slate">Price ₹ 26 398.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:flex-wrap items-center justify-start w-full md:w-auto text-xs sm:text-sm font-medium pt-3">
+                <button lang="button" class="w-full sm:w-auto md:w-full font-bold border rounded-lg bg-primary text-white py-3 px-5 mx-0">Track Order</button>
+                <button lang="button" class="w-full sm:w-auto md:w-full font-bold border rounded-lg border-primary text-black_mirage py-3 px-5 md:mt-3 ml-2 md:ml-0">Cancel Order</button>
+              </div>
+            </div>
+          </div>
+          <div class="border rounded-xl p-4">
+            <div class="flex flex-wrap items-start justify-between sm:-mt-4 -mx-2">
+              <div class="font-bold text-sm lg:text-base sm:pt-3 lg:pt-4 px-2"><span>Order Place on</span><span>&nbsp;</span><span class="text-primary">03 March 2023</span></div>
+              <div class="font-bold text-sm lg:text-base sm:pt-3 lg:pt-4 px-2"><span>Total -</span><span>&nbsp;</span><span class="text-primary">$ 24 814.00</span></div>
+              <div class="relative group flex items-center justify-between text-sm lg:text-base font-bold cursor-pointer sm:pt-3 lg:pt-4 px-2">
+                <span>Ship to -<span>&nbsp;</span><span class="text-primary">Jhon Deo</span></span>
+                <span class="icon-downArrow text-base pl-4"></span>
+                <div class="droplist_two max-w-full min-w-[250px] sm:w-auto left-0 sm:right-0 sm:left-auto lg:left-1/2 lg:-translate-x-1/2">
+                  <div class="flex flex-col items-start font-bold text-sm space-y-2">
+                    <span>Jhon Deo</span>
+                    <span>No-01, First Floor, Beside Empire-State Gate-1</span>
+                    <span>Taxas,U.S.A 987654</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap lg:block items-center justify-between w-full lg:w-auto text-sm lg:text-base font-bold pt-1 sm:pt-3 lg:pt-4 px-2">
+                <p>Order # 001-7912515-8810700</p>
+                <div class="flex items-center justify-between lg:pt-1">
+                  <a href="javascript.void(0)" class="capitalize text-primary underline decoration-primary">view order details</a>
+                  <a href="javascript.void(0)" class="capitalize text-primary underline decoration-primary px-1.5">invoice</a>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap md:flex-nowrap items-end justify-between">
+              <div class="pt-2">
+                <p class="text-lg font-bold text-primary">Arriving 06 Mar 2023</p>
+                <div class="flex flex-wrap sm:flex-nowrap items-center lg:items-end justify-start pt-2 sm:pt-4">
+                  <div class="order_img bg-gray_gull/10"><img src="../assets/images/image5.png" alt="Order Img" class="w-full"></div>  
+                  <div class="flex flex-col items-start justify-center sm:pl-4 md:pl-6 lg:pl-8 pt-1 sm:pt-0  space-y-1">
+                    <p class="font-bold text-sm md:text-base">Floral rose gold finger ring</p>
+                    <p class="w-11/12 text-xs text-gray_gull font-medium break-all">Add the gentle charm of flowers to your look with this finger ring crafted in 18 Karat Rose Gold with diamonds. Stone Clarity SI2</p>
+                    <div class="font-bold">
+                      <span class="text-xs md:text-sm text-black_mirage">Offer Price</span>
+                      <span class="text-sm md:text-base">₹ 24 814.00</span>
+                      <span class="font-normal text-xs md:text-sm text-gray_slate">Price ₹ 26 398.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:flex-wrap items-center justify-start w-full md:w-auto text-xs sm:text-sm font-medium pt-3">
+                <button lang="button" class="w-full sm:w-auto md:w-full font-bold border rounded-lg bg-primary text-white py-3 px-5 mx-0">Track Order</button>
+                <button lang="button" class="w-full sm:w-auto md:w-full font-bold border rounded-lg border-primary text-black_mirage py-3 px-5 md:mt-3 ml-2 md:ml-0">Cancel Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- popUp -->
+    <div id="cart_menu" class="cartPopUp fixed inset-0 z-50 hidden mt-auto items-center">
+      <span class="backDrop fixed inset-0 bg-black/40 opacity-0 -z-50" onclick="removeClass('cart_menu','show')"></span>
+      <div class="w-full px-4">
+        <div class="relative cart_menu flex flex-col justify-between max-w-[507px] w-full bg-white rounded-xl drop-shadow-tow opacity-0 p-4 sm:p-6 md:p-8 mx-auto anim">
+          <h3 class="block text-center font-bold">Return Order</h3>
+          <form action="" class="flex flex-wrap items-center -mx-2 pt-6">
+            <div class="w-full p-2">
+              <select name="resion" id="resion" class="block w-full cursor-pointer bg-light_gray font-semibold text-primary text-sm lg:text-base outline-2 outline-dashed outline-primary/10 rounded-lg md:p-4 p-3 lg:p-5 appearance-none">
+                <option value="resion1">Resion 1</option>
+                <option value="resion2">Resion 2</option>
+                <option value="resion3">Resion 3</option>
+                <option value="resion4">Resion 4</option>
+                <option value="resion5">Resion 5</option>
+              </select>
+            </div>
+            <div class="w-full p-2">
+              <label for="review_massage" class="cardinput">
+                <textarea name="review_massage" placeholder="Wright a Massage" id="review_massage" cols="30" rows="3"></textarea>
+              </label>
+            </div>
+            <div class="w-full sm:w-1/2 p-2">
+              <label class="block cursor-pointer bg-light_gray font-semibold text-primary text-sm lg:text-base outline-2 outline-dashed outline-primary/10 rounded-lg md:p-4 p-3 lg:p-5">
+                <input type="file" name="upload_img" id="upload_img" class="placeholder-opacity-0 hidden" />
+                <div class="flex items-center">
+                  <span class="icon-uploadImg mr-2"></span>
+                  <span>Upload Image</span>
+                </div>
+              </label>
+            </div>
+            <div class="w-full sm:w-1/2 p-2">
+              <label class="block cursor-pointer bg-light_gray font-semibold text-primary text-sm lg:text-base outline-2 outline-dashed outline-primary/10 rounded-lg md:p-4 p-3 lg:p-5">
+                <input type="file" name="upload_img" id="upload_img" class="placeholder-opacity-0 hidden" />
+                <div class="flex items-center">
+                  <span class="icon-uploadVideo mr-2"></span>
+                  <span>Upload Video</span>
+                </div>
+              </label>
+            </div>
+            <div class="w-full flex text-xs sm:text-base font-medium space-x-2 pt-6 px-2">
+              <button type="reset" class="py-4 card-btn-secondary">Cancle</button>
+              <button type="submit" class="py-4 card-btn-primary" onclick="removeClass('cart_menu','show')">Send Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="bg-primary py-10 xl:py-12">
+      <div class="container">
+        <div class="text-center w-full mb-6 md:mb-10 xl:mb-12">
+          <img src="../assets/images/svg/Sellify.svg" class="brightness-0 invert mx-auto" alt="logilogo"/>
+        </div>
+        <div class="flex md:justify-between flex-wrap -px-3">
+          <div class="w-full sm:w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">Contact Us</span>
+              <div class="w-full space-y-2">
+                <span class="block text-sm lg:text-base text-light_gray">Mobile No : +91 9876543214</span>
+                <span class="block text-sm lg:text-base text-light_gray">Email : Support@gmail.com</span>
+                <div class="flex space-x-4 pt-2">
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Facebook.svg" alt="Facebook"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Twitter.svg" alt="Twitter"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Instagram.svg" alt="Instagram"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/Github.svg" alt="Github"/>
+                  </span>
+                  <span class="inline-block">
+                    <img src="../assets/images/svg/LinkedIn.svg" alt="LinkedIn"/>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">Customer Services</span>
+              <div class="w-full space-y-2">
+                <a href="dashboard/contact-us" class="block text-sm lg:text-base text-light_gray">Contact Us</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Track Your Order</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Product Care & Repair</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Book an Appointment</a>
+                <a href="dashboard/faq" class="block text-sm lg:text-base text-light_gray">Frequently Asked Questions</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Shipping & Returns</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">About Us</span>
+              <div class="w-full space-y-2">
+                <a href="dashboard/about-us" class="block text-sm lg:text-base text-light_gray">About Us</a>
+                <a href="dashboard/faq" class="block text-sm lg:text-base text-light_gray">FAQ</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Our Producers</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Sitemap</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Terms & Conditions</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-1/2 md:w-auto p-3">
+            <div class="w-full space-y-3 lg:space-y-4">
+              <span class="block text-lg lg:text-xl font-bold text-white">Catalog</span>
+              <div class="w-full space-y-2">
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Earrings</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Necklaces</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Bracelets</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Rings</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Jewellery Box</a>
+                <a href="javscript:void(0)" class="block text-sm lg:text-base text-light_gray">Studs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  <script src="../assets/js/script.js"></script>
