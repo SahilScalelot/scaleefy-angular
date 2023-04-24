@@ -14,7 +14,35 @@
         <div class="w-full lg:w-8/12 p-3">
           <div class="w-full lg:border-r lg:border-gray_slate space-y-5">
             <div class="max-w-full lg:max-w-3xl lg:pr-6 space-y-4">
-              <div class="w-full rounded-xl p-4 border border-gray_slate/50 flex flex-wrap">
+              <div *ngFor="let item of cartData;let i = index" class="w-full rounded-xl p-4 border border-gray_slate/50 flex flex-wrap">
+                <div class="w-28 h-28 mx-auto mb-2">
+                  <div class="w-full h-full bg-gray_slate/20 rounded-xl">
+                    <img src="{{item?.product_image || 'empty'}}" class="w-full" alt="review_product" />
+                  </div>
+                </div>
+                <div class="w-full sm:w-[calc(100%-112px)] sm:pl-6">
+                  <div class="flex items-center">
+                    <span class="font-primary text-secondary text-base pr-3">{{item?.product_name || 'empty'}}</span>
+                    <a (click)="removeItemsCart(i)" href="javascript:void(0)" class="icon-delete ml-auto text-2xl text-[#D21A0E]"></a>
+                  </div>
+                  <p class="text-xs text-gray_slate max-w-md font-medium">Add the gentle charm of flowers to your look with this finger ring crafted in 18 Karat Rose Gold with diamonds. Stone Clarity SI2</p>
+                  <div class="flex items-center">
+                    <div class="flex items-center">
+                      <span class="font-primary text-secondary">₹ {{item?.product_price || 'empty'}} </span>
+                      <span class="font-primary text-secondary text-sm pl-4">Qty : {{item?.product_quantity}}</span>
+                    </div>
+                    <div class="flex items-center quantity_count ml-auto">
+                      <button (click)="onDecrement(i)" type="button">−</button>
+                      <span>
+                        <input type="number" id="Quantity" value="{{item?.product_quantity}}" class="h-10 w-10 border-y-0 text-center outline-none appearance-none">
+                      </span>
+                      <button (click)="onIncrement(i)" type="button">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngIf="cartData.length==0" class="w-full rounded-xl p-4 border border-gray_slate/50 flex flex-wrap">
                 <div class="w-28 h-28 mx-auto mb-2">
                   <div class="w-full h-full bg-gray_slate/20 rounded-xl">
                     <img src="../assets/images/review_product.png" class="w-full" alt="review_product" />
@@ -22,13 +50,13 @@
                 </div>
                 <div class="w-full sm:w-[calc(100%-112px)] sm:pl-6">
                   <div class="flex items-center">
-                    <span class="font-primary text-secondary text-base pr-3">{{cartData[0]?.product_name || 'empty'}}</span>
+                    <span class="font-primary text-secondary text-base pr-3">Your cart is empty</span>
                     <a href="javascript:void(0)" class="icon-delete ml-auto text-2xl text-[#D21A0E]"></a>
                   </div>
                   <p class="text-xs text-gray_slate max-w-md font-medium">Add the gentle charm of flowers to your look with this finger ring crafted in 18 Karat Rose Gold with diamonds. Stone Clarity SI2</p>
                   <div class="flex items-center">
                     <div class="flex items-center">
-                      <span class="font-primary text-secondary">₹ {{cartData[0]?.product_price || 'empty'}} </span>
+                      <span class="font-primary text-secondary">₹ empty </span>
                       <span class="font-primary text-secondary text-sm pl-4">Qty : 1</span>
                     </div>
                     <div class="flex items-center quantity_count ml-auto">
@@ -41,6 +69,7 @@
                   </div>
                 </div>
               </div>
+
               <!-- <div class="w-full rounded-xl p-4 border border-gray_slate/50 flex flex-wrap">
                 <div class="w-28 h-28 mx-auto mb-2">
                   <div class="w-full h-full bg-gray_slate/20 rounded-xl">
@@ -105,20 +134,20 @@
               <h4 class="block font-bold mb-3 sm:mb-6 lg:mb-10">Your Order</h4>
               <!-- product cost  -->
               <div class="w-full pb-2 space-y-2">
-                <div class="w-full flex items-center justify-between">
-                  <span class="text-sm text-gray_slate font-bold pr-3">Floral rose gold finger ring x 1</span>
-                  <span class="text-sm text-gray_slate font-bold">₹ 4814.00</span>
+                <div *ngFor="let item of cartData" class="w-full flex items-center justify-between">
+                  <span class="text-sm text-gray_slate font-bold pr-3">{{item.product_name}} x {{item.product_quantity}}</span>
+                  <span class="text-sm text-gray_slate font-bold">₹ {{item.product_price}}</span>
                 </div>
-                <div class="w-full flex items-center justify-between">
+                <!-- <div class="w-full flex items-center justify-between">
                   <span class="text-sm text-gray_slate font-bold pr-3">Floral rose gold finger ring x 2</span>
                   <span class="text-sm text-gray_slate font-bold">₹ 2814.00</span>
-                </div>
+                </div> -->
               </div>
               <!-- Sub Total -->
               <div class="w-full py-2 border-t border-gray_slate/50 space-y-2">
                 <div class="w-full flex items-center justify-between">
                   <span class="text-sm text-gray_slate font-bold pr-3">Sub Total</span>
-                  <span class="text-sm text-gray_slate font-bold">₹ 7228.00</span>
+                  <span class="text-sm text-gray_slate font-bold">₹ {{subTotal}}.00</span>
                 </div>
                 <div class="w-full flex items-center justify-between">
                   <span class="text-sm text-gray_slate font-bold pr-3">Shipping Charge</span>
@@ -128,7 +157,7 @@
               <!-- total  -->
               <div class="w-full flex items-center justify-between py-2 border-t border-gray_slate/50">
                 <span class="font-primary text-black_mirage pr-3">Total</span>
-                <span class="text-lg xl:text-xl text-black_mirage font-bold">₹ 7228.00</span>
+                <span class="text-lg xl:text-xl text-black_mirage font-bold">₹ {{total}}.00</span>
               </div>
             </div>
           </div>

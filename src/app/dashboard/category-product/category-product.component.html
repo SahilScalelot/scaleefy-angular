@@ -28,7 +28,7 @@
       <!-- product listing -->
       <div class="w-full">
         <div class="flex flex-wrap -mx-3 py-8 md:py-10 xl:py-12">
-          <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-3">
+          <div *ngFor="let item of productData;let i = index" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-3">
             <div class="w-full max-w-[306px] mx-auto bg-white hover:drop-shadow-one rounded-bl-xl rounded-br-xl anim">
               <div class="relative max-w-[306px] mx-auto">
                 <div class="absolute top-3 right-3">
@@ -36,32 +36,32 @@
                     <i class="icon-fillHeart text-lg text-primary"></i>
                   </span>
                 </div>
-                <img class="w-full" src="../assets/images/product1.png" alt="product1"/>
+                <img class="w-full" src="{{ item.product_image }}" alt="product1"/>
                 <div class="absolute bottom-2 left-2">
-                  <span class="block bg-white text-primary text-sm font-medium px-2 rounded-md">Flat 6% off</span>
+                  <span class="block bg-white text-primary text-sm font-medium px-2 rounded-md">{{ item.discount_offer }}</span>
                 </div>
               </div>
               <div class="space-y-1 sm:space-y-2 p-3">
                 <div class="w-full">
-                  <span class="font-primary text-sm">Twinkling Night Stud Earrings</span>
+                  <span class="font-primary text-sm">{{ item.product_name }}</span>
                   <div class="w-full flex items-center">
-                    <span class="text-sm font-bold">₹ 30329,</span>
-                    <span class="text-xs text-gray_gull font-medium pl-1">₹ 32265</span>
+                    <span class="text-sm font-bold">₹ {{ item.product_price }},</span>
+                    <span class="text-xs text-gray_gull font-medium pl-1">₹ {{ item.market_price }}</span>
                   </div>
                 </div>
                 <div class="flex items-center flex-wrap text-sm font-semibold">
-                  <span class="inline-block">women</span>
-                  <span class="inline-block px-2">|</span>
-                  <span class="inline-block">earrings</span>
+                  <span class="inline-block">{{ item.product_type }}</span>
+                  <!-- <span class="inline-block px-2">|</span>
+                  <span class="inline-block">earrings</span> -->
                 </div>
                 <div class="flex flex-nowrap items-center justify-between text-xs sm:text-sm font-medium space-x-2">
-                  <button lang="button" class="card-btn-secondary" (click)="addToCart()">Add to cart</button>
+                  <button lang="button" class="card-btn-secondary" (click)="addToCart(productData[i])">Add to cart</button>
                   <button lang="button" class="card-btn-primary">Buy</button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-3">
+          <!-- <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-3">
             <div class="w-full max-w-[306px] mx-auto bg-white hover:drop-shadow-one rounded-bl-xl rounded-br-xl anim">
               <div class="relative max-w-[306px] mx-auto">
                 <div class="absolute top-3 right-3">
@@ -555,7 +555,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="viewmore_btn text-center pb-24">
           <a href="javascript:void(0)" class="inline-block rounded-md py-2 px-10 lg:p-3 lg:py-4 border border-black_mirage/75 lg:w-full lg:max-w-[250px] text-center font-primary">Read More</a>

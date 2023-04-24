@@ -6,5 +6,5 @@
 # git status
 # git add .
 # git commit -m "test"
-# git pull origin
-# git push origin
+# git pull origin main
+# git push origin main
