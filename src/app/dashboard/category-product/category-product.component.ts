@@ -159,10 +159,26 @@ export class CategoryProductComponent {
   ]
 
   constructor(private _cartService: GlobalService){}
-
-
+  
+  ngOnInit(): void {
+    let data = JSON.parse(localStorage.getItem('favorite')!);
+    this.productData = data || this.productData;
+  }
+  
   // AddToCart
   addToCart(cartData: any): void {
     this._cartService.addToLocalCart(cartData)
+  }
+
+  wishLists(wishListData: any, index: any): void {
+    if (this.productData[index].color != 'red-600') {
+      this.productData[index].color = 'red-600';
+      this.productData[index].index = index;
+      localStorage.setItem('favorite', JSON.stringify(this.productData));
+    } else {
+      console.log('primary')
+      this.productData[index].color = 'primary';
+      localStorage.setItem('favorite', JSON.stringify(this.productData));
+    }
   }
 }

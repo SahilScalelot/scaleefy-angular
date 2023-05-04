@@ -32,8 +32,8 @@
             <div class="w-full max-w-[306px] mx-auto bg-white hover:drop-shadow-one rounded-bl-xl rounded-br-xl anim">
               <div class="relative max-w-[306px] mx-auto">
                 <div class="absolute top-3 right-3">
-                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white">
-                    <i class="icon-fillHeart text-lg text-primary"></i>
+                  <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white cursor-pointer">
+                    <i (click)="wishLists(item, i)" class="icon-fillHeart text-lg text-{{ item.color || 'primary' }}"></i>
                   </span>
                 </div>
                 <img class="w-full" src="{{ item.product_image }}" alt="product1"/>
