@@ -5,6 +5,10 @@ import { IndexComponent } from '../app/dashboard/index/index.component';
 const routes: Routes = [
   { path: '', component: IndexComponent },
   {
+    path: 'auth',
+    loadChildren: () => import('../app/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: 'dashboard',
     loadChildren: () => import('../app/dashboard/dashboard.module').then(m => m.DashboardModule)
   },

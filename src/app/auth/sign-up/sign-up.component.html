@@ -1,29 +1,59 @@
-<img src="./assets/images/loginbg.png" class="absolute inset-y-0 left-0 h-screen" alt="">
-<div class="relative z-20 flex items-center justify-center w-full h-screen">
+<img src="./assets/images/loginbg.png" class="absolute z-0 top-40 inset-y-0 left-0" style="height: 78.50dvh;" alt="">
+<div class="relative z-0 top-0 flex items-center justify-center w-full">
   <div class="max-w-[475px] w-full px-4">
-    <div class="homr_logo -mt-10 mb-10 md:-mt-24 md:mb-24 text-center"><a href="#" class="block max-w-[238px] mx-auto"><img src="./assets/images/logilogo.png" class="w-full mx-auto" alt=""></a></div>
+    <div class="homr_logo -mt-0 mb-0 md:-mt-0 md:mb-0 text-center"><a href="#" class="block max-w-[238px] mx-auto"><img src="./assets/images/logilogo.png" class="w-full mx-auto" alt=""></a></div>
     <div class="form_data space-y-7">
       <div class="space-y-1 md:space-y-3">
         <span class="block text-2xl sm:text-28 font-bold">Sign up</span>
         <p class="text-gray_slate text-sm sm:text-base">Please fill your information below</p>
       </div>
-      <form action="" class="space-y-4 sm:space-y-6">
+      <form [formGroup]="signUpForm" class="space-y-4 sm:space-y-6">
         <div class="flex items-center w-full bg-light_gray text-gray_gull rounded-lg text-sm sm:text-base p-2 sm:p-3">
           <label for="fName" class="icon-Profile px-3"></label>
-          <input type="text" id="fName" class="border-0 outline-none bg-transparent w-full" placeholder="Name">
+          <input type="text" [formControlName]="'name'" id="fName" class="border-0 outline-none bg-transparent w-full" placeholder="Name">
         </div>
+        <span class="text-red-600" *ngIf="signUpForm.get('name')?.invalid && (signUpForm.get('name')?.dirty && signUpForm.get('name')?.touched)">
+          <span *ngIf="signUpForm.get('name')?.errors?.['required']">
+            Name is required.
+          </span>
+          <span *ngIf="signUpForm.get('name')?.errors?.['minlength']">
+            Name must be at least 4 characters long.
+          </span>
+          <span *ngIf="signUpForm.get('name')?.errors?.['pattern']">
+            Only characters are allowed.
+          </span>
+        </span>
         <div class="flex items-center w-full bg-light_gray text-gray_gull rounded-lg text-sm sm:text-base p-2 sm:p-3">
           <label for="eMial" class="icon-envelope px-3"></label>
-          <input type="email" id="eMial" class="border-0 outline-none bg-transparent w-full" placeholder="Email">
+          <input type="email" [formControlName]="'email'" id="eMial" class="border-0 outline-none bg-transparent w-full"
+            placeholder="Email">
         </div>
+        <span class="text-red-600" *ngIf="signUpForm.get('email')?.invalid && (signUpForm.get('email')?.dirty && signUpForm.get('email')?.touched)">
+          <span *ngIf="signUpForm.get('email')?.errors?.['required']">
+            Email is required.
+          </span>
+          <span *ngIf="signUpForm.get('email')?.errors?.['pattern']">
+            Please use a valid email address.
+          </span>
+        </span>
         <div class="flex items-center w-full bg-light_gray text-gray_gull rounded-lg text-sm sm:text-base p-2 sm:p-3">
           <label for="passWord" class="icon-lock px-3"></label>
-          <input type="password" id="passWord" class="border-0 outline-none bg-transparent w-full" placeholder="Password">
+          <input type="password" [formControlName]="'password'" id="passWord"
+            class="border-0 outline-none bg-transparent w-full" placeholder="Password">
         </div>
+        <span class="text-red-600" *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.dirty && signUpForm.get('password')?.touched">
+          <span *ngIf="signUpForm.get('password')?.errors?.['required']">
+            Password is required.
+          </span>
+        </span> 
         <div class="flex items-center pt-3">
-          <button lang="submit" class="bg-primary w-full rounded-lg text-base md:text-lg lg:text-xl text-white capitalize font-medium p-2 md:p-3">sign up</button>
+          <button (click)="signUp()" lang="submit" class="bg-primary w-full rounded-lg text-base md:text-lg lg:text-xl text-white capitalize font-medium p-2 md:p-3">
+            sign up
+          </button>
         </div>
-        <div class="pt-3"><hr></div>
+        <div class="pt-3">
+          <hr>
+        </div>
         <div class="flex items-center justify-between text-xs md:text-base">
           <span class="capitalize text-gray_slate font-semibold">already have an account</span>
           <a href="" class="capitalize text-primary font-semibold">login to your account</a>
